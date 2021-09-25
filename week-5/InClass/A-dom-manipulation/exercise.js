@@ -15,8 +15,14 @@ Write JavaScript below that logs:
     --> should log a list of nodes with a length of 3
 
 */
-
-
+ let pElement = document.getElementsByTagName("p");
+    console.log(pElement);
+ let divElement = document.querySelector(".site-header");
+  console.log(divElement);
+  let jumbo = document.getElementById("jumbotron-text");
+  console.log(jumbo);
+  let allElementP = document.querySelectorAll(".primary-content p");
+  console.log(allElementP);
 /*
 Task 2
 ======
@@ -40,11 +46,25 @@ Task 4
 When a user clicks the 'Add some text' button, a new paragraph should be added below the buttons that says "Read more below."
 */
 
+// const newElement = document.createElement("p");
+// newElement.innerText = "Read more below.";
+// const jumboC = document.getElementsByClassName("jumbotron");
 
 
+// addTextBtn.addEventListener("click", function (){
+//  jumboC.appendChild(newElement);
+// })
+
+const addTextBtn = document.querySelector("#addTextBtn");
+addTextBtn.onclick = function() {
+    const newPara = document.createElement("p");
+    newPara.innerText = "Read more below";
+    addTextBtn.parentElement.appendChild(newPara);
+}
 /*
 Task 5
 ======
 
 When the 'Larger links!' button is clicked, the text of all links on the page should increase.
 */
+
